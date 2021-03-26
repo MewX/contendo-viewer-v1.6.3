@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.net.*?>
+<?import java.lang.*?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="net.zamasoft.reader.shelf.BooksController"
+      AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
+      AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+      styleClass="books"
+      fx:id="scrollPane">
+  <BorderPane>
+    <top>
+      <Pane styleClass="top" prefHeight="62"/>
+    </top>
+    <left>
+      <Pane styleClass="left" prefWidth="42"/>
+    </left>
+    <center>
+      <FlowPane fx:id="booksPane" hgap="50" vgap="44" minHeight="678"/>
+    </center>
+    <right>
+      <Pane styleClass="right" prefWidth="42"/>
+    </right>
+    <bottom>
+      <Pane styleClass="bottom" prefHeight="6"/>
+    </bottom>
+  </BorderPane>
+</ScrollPane>
+

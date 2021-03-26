@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.shelf.ConfigController"
+      styleClass="config">
+  <stylesheets>
+    <URL value="@../main.css" />
+    <URL value="@config.css" />
+  </stylesheets>
+  
+  <VBox>
+  <CheckBox fx:id="useProxy" text="%useProxy" />
+  </VBox>
+  
+  <HBox>
+  <VBox>
+    <Label text="%proxyHost" />
+    <TextField fx:id="proxyHost"/>
+  </VBox>
+  <VBox>
+    <Label text="%proxyPort" />
+    <TextField fx:id="proxyPort"/>
+  </VBox>
+  </HBox>
+  
+  <VBox>
+    <Label text="%proxyUser" />
+    <TextField fx:id="proxyUser"/>
+  </VBox>
+  <VBox>
+    <Label text="%proxyPassword" />
+    <PasswordField fx:id="proxyPassword"/>
+  </VBox>
+  
+  <FlowPane alignment="CENTER">
+    <Button text="%apply" onAction="#applyAction" />
+    <Button text="%cancel" onAction="#cancelAction" />
+  </FlowPane>
+</VBox>

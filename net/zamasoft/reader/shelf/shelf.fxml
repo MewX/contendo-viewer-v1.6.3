@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.shelf.ShelfController"
+            styleClass="shelf">
+  <stylesheets>
+    <URL value="@shelf.css" />
+  </stylesheets>
+  
+  <BorderPane AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+              AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+  <top>
+    <AnchorPane>
+      <ImageView fitWidth="260" fitHeight="58" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10" AnchorPane.bottomAnchor="10">
+        <image>
+          <SVGImage url="@../icons/logo.svg" width="260" height="58"/>
+        </image>
+      </ImageView>
+    </AnchorPane>
+  </top>
+  <center>
+  <!-- 本棚 -->
+  <TabPane fx:id="tabPane"
+           tabClosingPolicy="UNAVAILABLE">
+  <tabs>
+  <Tab text="%userShelf">
+  <content>
+  <StackPane fx:id="userStack">
+  </StackPane>
+  </content>
+  </Tab>
+  <Tab text="%webShelf">
+  <content>
+  <StackPane fx:id="webStack">
+  </StackPane>
+  </content>
+  </Tab>
+  </tabs>
+  </TabPane>
+  </center>
+  
+  <right>
+  <!-- ツールバー -->
+  <fx:include fx:id="toolbar" source="toolbar.fxml"/>
+  </right>
+  </BorderPane>
+
+  <!-- 書籍の詳細情報 -->
+  <AnchorPane fx:id="bookInfo" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10"
+              prefHeight="198" styleClass="bookInfo" opacity="0" mouseTransparent="true">
+    <VBox AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="138" AnchorPane.topAnchor="10" AnchorPane.bottomAnchor="10">
+      <Label fx:id="titleText" styleClass="title"/>
+      <Label fx:id="authorText" styleClass="author"/>
+      <Label fx:id="publisherText" styleClass="publisher"/>
+      <Label fx:id="detailText" styleClass="detail"/>
+    </VBox>
+  </AnchorPane>
+  </AnchorPane>

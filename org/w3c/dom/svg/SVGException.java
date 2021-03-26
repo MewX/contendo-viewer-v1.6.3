@@ -1,0 +1,22 @@
+package org.w3c.dom.svg;
+
+public abstract class SVGException extends RuntimeException {
+  public short code;
+  
+  public static final short SVG_WRONG_TYPE_ERR = 0;
+  
+  public static final short SVG_INVALID_VALUE_ERR = 1;
+  
+  public static final short SVG_MATRIX_NOT_INVERTABLE = 2;
+  
+  public SVGException(short paramShort, String paramString) {
+    super(paramString);
+    this.code = paramShort;
+  }
+}
+
+
+/* Location:              /mnt/r/ConTenDoViewer.jar!/org/w3c/dom/svg/SVGException.class
+ * Java compiler version: 1 (45.3)
+ * JD-Core Version:       1.1.3
+ */

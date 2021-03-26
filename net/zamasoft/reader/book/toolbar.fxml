@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.book.ToolBarController"
+      fx:id="root"
+      AnchorPane.topAnchor="0"
+      styleClass="tools">
+  <fx:define>
+    <ToggleGroup fx:id="toolToggleGroup"/>
+  </fx:define>
+  
+  <!-- 検索 -->
+  <HBox fx:id="toolbar"
+        styleClass="tool-bar">
+    <ToggleButton fx:id="searchButton" toggleGroup="$toolToggleGroup">
+      <tooltip>
+        <Tooltip text="%search"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="normal">
+            <SVGImage url="@../icons/search.svg" width="48"/>
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="selected">
+            <SVGImage url="@../icons/search-selected.svg" width="48"/>
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    
+    <!-- マーカー -->
+    <ToggleButton fx:id="markButton" toggleGroup="$toolToggleGroup">
+      <tooltip>
+        <Tooltip text="%marker"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="normal">
+            <SVGImage url="@../icons/marker.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="selected">
+            <SVGImage url="@../icons/marker-selected.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    
+    <!-- しおり -->
+    <ToggleButton fx:id="bookmarkButton" toggleGroup="$toolToggleGroup">
+      <tooltip>
+        <Tooltip text="%bookmark"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="normal">
+            <SVGImage url="@../icons/bookmark.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="selected">
+            <SVGImage url="@../icons/bookmark-selected.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    
+    <!-- 文字の大きさ -->
+    <ToggleButton fx:id="textSizeButton" toggleGroup="$toolToggleGroup">
+      <tooltip>
+        <Tooltip text="%textSize"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="normal">
+            <SVGImage url="@../icons/textsize.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="selected">
+            <SVGImage url="@../icons/textsize-selected.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    
+    <!-- 書字方向 -->
+    <ToggleButton fx:id="writingModeButton" toggleGroup="$toolToggleGroup">
+      <tooltip>
+        <Tooltip text="%writingMode"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <StackPane styleClass="normal">
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+            <SVGImage url="@../icons/horizontal.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/vertical.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/twocol.svg" width="48" />
+          </ImageView>
+          </StackPane>
+          <StackPane styleClass="selected">
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+            <SVGImage url="@../icons/horizontal-selected.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/vertical-selected.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/twocol-selected.svg" width="48" />
+          </ImageView>
+          </StackPane>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    
+    <!-- 見開き -->
+    <Button fx:id="spreadButton" onAction="#spreadAction">
+      <tooltip>
+        <Tooltip text="%spread"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/spread-auto.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/spread.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/nospread.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </Button>
+    
+    <!-- フルスクリーン -->
+    <Button fx:id="fullScreenButton" onAction="#fullScreenAction">
+      <tooltip>
+        <Tooltip text="%fullScreen"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+            <SVGImage url="@../icons/window.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/full.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </Button>
+
+    <!-- 反転 -->
+    <Button fx:id="invertButton" onAction="#invertAction">
+      <tooltip>
+        <Tooltip text="%reverseMode"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+            <SVGImage url="@../icons/normal.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/invert.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </Button>
+
+    <!-- 書棚に戻る -->
+    <Button onAction="#toShelfAction">
+      <tooltip>
+        <Tooltip text="%toshelf"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/to-shelf.svg" width="48" />
+        </ImageView>
+      </graphic>
+    </Button>
+  </HBox>
+  
+  <!-- 検索ボックス -->
+  <HBox fx:id="searchBox"
+        styleClass="tool-bar"
+        visible="false">
+    <TextField fx:id="queryText"/>
+    <Button onAction="#searchLeftAction">
+      <graphic>
+        <ImageView fitWidth="24" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/search-left.svg" width="24" />
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button onAction="#searchRightAction">
+      <graphic>
+        <ImageView fitWidth="24" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/search-right.svg" width="24" />
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button onAction="#searchListAction" fx:id="searchListButton">
+      <graphic>
+        <ImageView fitWidth="24" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/list.svg" width="24" />
+        </ImageView>
+      </graphic>
+    </Button>
+  </HBox>
+  
+  <!-- しおりボックス -->
+  <HBox fx:id="bookmarkBox"
+        styleClass="tool-bar"
+        visible="false">
+    <Label text="%title"/>
+    <TextField fx:id="bookmarkText"/>
+    <Button onAction="#bookmarkAction" text="%addBookmark" fx:id="addBookmarkButton"/>
+  </HBox>
+  
+  <!-- 書字方向ボックス -->
+  <HBox fx:id="writingModeBox"
+        styleClass="tool-bar"
+        visible="false">
+    <fx:define>
+      <ToggleGroup fx:id="writingModeToggleGroup"/>
+    </fx:define>
+    <ToggleButton toggleGroup="$writingModeToggleGroup">
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="normal">
+            <SVGImage url="@../icons/horizontal.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="selected">
+            <SVGImage url="@../icons/horizontal-selected.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$writingModeToggleGroup">
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="normal">
+            <SVGImage url="@../icons/vertical.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="selected">
+            <SVGImage url="@../icons/vertical-selected.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$writingModeToggleGroup">
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="normal">
+            <SVGImage url="@../icons/twocol.svg" width="48" />
+          </ImageView>
+          <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true" styleClass="selected">
+            <SVGImage url="@../icons/twocol-selected.svg" width="48" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+  </HBox>
+  
+  <!-- フォントサイズボックス -->
+  <HBox fx:id="textSizeBox"
+        styleClass="tool-bar"
+        visible="false">
+    <fx:define>
+      <ToggleGroup fx:id="textSizeToggleGroup"/>
+    </fx:define>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="4" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="4"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="6" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="6"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="8" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="8"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="10" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="10"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="12" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="12"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="14" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="14"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="16" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="16"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+    <ToggleButton toggleGroup="$textSizeToggleGroup">
+      <graphic>
+        <StackPane>
+          <Circle centerX="24" centerY="24" radius="20" styleClass="normal"/>
+          <Group styleClass="selected">
+            <Rectangle width="48" height="48"/>
+            <Circle centerX="24" centerY="24" radius="20"/>
+          </Group>
+        </StackPane>
+      </graphic>
+    </ToggleButton>
+  </HBox>
+</AnchorPane>

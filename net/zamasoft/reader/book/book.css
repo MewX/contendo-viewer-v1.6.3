@@ -1,0 +1,154 @@
+.book#root {
+    -fx-background-color: Black;
+}
+.book #stackPane {
+    -fx-background-color: transparent;
+}
+
+.book #scroll { 
+    -fx-opacity: 1;
+}
+.book #scroll .thumb { 
+    -fx-opacity: 0.7;
+}
+
+.book #scrollLabel {
+	-fx-font-size: 16px; -fx-font-weight: normal;
+	-fx-background-color: rgba(255,255,255,0.8);
+	-fx-padding: 4px;
+}
+
+.tools .toggle-button *.selected,
+.tools .button *.selected,
+.tools .toggle-button:selected *.normal {
+	visibility: hidden;
+}
+.tools .toggle-button:selected *.selected,
+.tools .button:selected *.selected {
+	visibility: visible;
+}
+
+.tools #textSizeBox Circle,
+.tools #textSizeBox Rectangle {
+	-fx-fill: White;
+}
+
+.tools #queryText {
+	-fx-background-color: White;
+	-fx-text-fill: Black;
+	-fx-font-size: 16px; -fx-font-weight: normal;
+}
+.tools #searchBox {
+	-fx-padding: 1px;
+	-fx-spacing: 3px;
+}
+
+.sidepane .tab {
+	-fx-background-color: rgba(255,255,255,0.8);
+	-fx-border-style: solid;
+	-fx-border-width: 1px 1px 0 1px;
+	-fx-padding: 10px;
+}
+.sidepane .tab:selected {
+    -fx-background-color: White;
+}
+.sidepane .tab-content-area {
+	-fx-background-color: rgba(255,255,255,0.8);
+	-fx-padding: 5px;
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+}
+.sidepane .tab-header-background {
+	-fx-background-color: transparent;
+}
+
+.sidepane .tree-view,
+.sidepane .tree-view .tree-cell,
+.sidepane #markers.list-view,
+.sidepane #markers.list-view .list-cell,
+.sidepane #bookmarks.list-view,
+.sidepane #bookmarks.list-view .list-cell,
+.tools .list-view,
+.tools .list-view .list-cell {
+	-fx-background-color: transparent;
+	-fx-font-size: 16px; -fx-font-weight: normal;
+}
+.tools .list-view {
+	-fx-background-color: rgba(255,255,255,0.8);
+}
+.tools .button {
+	-fx-background-color: transparent;
+}
+
+.sidepane {
+	-fx-cursor: default;
+}
+.sidepane .config {
+	-fx-spacing: 5px;
+}
+.sidepane .config .button {
+	-fx-padding: 3px 6px;
+}
+.sidepane .config .label,
+.sidepane .config .check-box {
+	-fx-font-size: 14px; -fx-font-weight: normal;
+}
+
+.book #maskPane {
+    -fx-background-color: Black;
+}
+
+.book #disablePane {
+    -fx-background-color: White;
+}
+
+.sidepane .tab-content-area,
+.sidepane .tab {
+	-fx-border-color: rgb(0,104,84);
+}
+.sidepane .tab,
+.sidepane .tree-view .tree-cell:hover,
+.sidepane #markers.list-view .list-cell:hover,
+.sidepane #bookmarks.list-view .list-cell:hover,
+.tools .list-view .list-cell:hover,
+sidepane .tree-view .tree-cell:focused,
+.sidepane #markers.list-view .list-cell:focused,
+.sidepane #bookmarks.list-view .list-cell:focused,
+.tools .list-view .list-cell:focused {
+	-fx-background-color: rgb(128,179,169);
+}
+.sidepane .tree-view .tree-cell:selected,
+.sidepane #markers.list-view .list-cell:selected,
+.sidepane #bookmarks.list-view .list-cell:selected,
+.tools .list-view .list-cell:selected {
+	-fx-background-color: rgb(0,104,84);
+}
+.tools #textSizeBox .selected Circle {
+	-fx-fill: rgb(0,104,84);
+}
+.tools #searchBox {
+	-fx-background-color: rgba(0,83,67,0.8);
+}
+
+#audioControls,
+#speechControls {
+	-fx-background-color: #555555;
+}
+#audioControls .label,
+#speechControls .label {
+	-fx-text-fill: White;
+	-fx-font-size: 12px; -fx-font-weight: bold;
+}
+#audioControls .button,
+#speechControls .button {
+	-fx-background-color: transparent;
+}
+#speechControls .button {
+	-fx-padding: 0;
+}
+
+#audioStop {
+	-fx-background-color: transparent;
+	-fx-padding: 0 10px;
+	-fx-opacity: 0.5;
+}

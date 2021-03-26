@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.shelf.BookTypeController">
+    <StackPane>
+      <Label fx:id="message" wrapText="true"/>
+      <ProgressBar fx:id="progress" progress="0" />
+    </StackPane>
+
+	<StackPane>
+	  <Button fx:id="readButton" text="%readThisBook" onAction="#openAction"/>
+	  <Button fx:id="downloadButton" text="%downloadThisBook" onAction="#downloadAction"/>
+	  <Button fx:id="cancelButton" text="%cancelDownload" onAction="#cancelDownloadAction"/>
+	</StackPane>
+	
+	<GridPane fx:id="info" alignment="CENTER" hgap="4" vgap="4">   
+	<Label text="%downloadCount" GridPane.halignment="RIGHT"
+	       GridPane.columnIndex="0" GridPane.rowIndex="0" />
+	<Label fx:id="downloadCount" text="XXXX" GridPane.halignment="RIGHT"
+	       GridPane.columnIndex="1" GridPane.rowIndex="0" />
+	<Label text="%downloadTerm" GridPane.halignment="RIGHT"
+	       GridPane.columnIndex="0" GridPane.rowIndex="1" />
+	<Label fx:id="downloadTerm" text="XXXX-XX-XX" GridPane.halignment="RIGHT"
+	       GridPane.columnIndex="1" GridPane.rowIndex="1" />
+	<Label text="%readTerm" GridPane.halignment="RIGHT"
+	       GridPane.columnIndex="0" GridPane.rowIndex="2" />
+	<Label fx:id="readTerm" text="XXXX-XX-XX" GridPane.halignment="RIGHT"
+	       GridPane.columnIndex="1" GridPane.rowIndex="2" />
+	</GridPane>
+	
+	<HBox alignment="BOTTOM_RIGHT" styleClass="tool-icon">
+    <Button fx:id="redownloadButton" onAction="#redownloadAction">
+      <tooltip>
+        <Tooltip text="%redownload"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitHeight="24" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/re-download.svg" width="24" />
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="deleteButton" onAction="#deleteAction">
+      <tooltip>
+        <Tooltip text="%deleteThisBook"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitHeight="24" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/trash.svg" width="24" />
+        </ImageView>
+      </graphic>
+    </Button>
+	</HBox>
+</VBox>

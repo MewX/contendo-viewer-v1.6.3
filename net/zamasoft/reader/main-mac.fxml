@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.MainController"
+            styleClass="main">
+  <stylesheets>
+    <URL value="@main.css" />
+    <URL value="@main-mac.css" />
+  </stylesheets>
+  
+  <!-- 内容 -->
+  <StackPane fx:id="content"
+        AnchorPane.leftAnchor="1" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="36" AnchorPane.bottomAnchor="1">
+  </StackPane>
+  
+  <!-- タイトルバー -->
+  <AnchorPane fx:id="titlebar"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"
+              onMouseMoved="#mouseMoved" onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" onMouseExited="#mouseExited">
+    <ToolBar AnchorPane.leftAnchor="10" AnchorPane.topAnchor="6">
+      <Button onAction="#closeAction">
+      <graphic>
+        <ImageView fitHeight="16" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@icons/close.svg" width="16" />
+        </ImageView>
+      </graphic>
+      </Button>
+      <Button onAction="#minimizeAction">
+      <graphic>
+        <ImageView fitHeight="16" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@icons/minimize.svg" width="16" />
+        </ImageView>
+      </graphic>
+      </Button>
+      <Button fx:id="fullScreenButton" onAction="#fullScreenAction">
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="16" pickOnBounds="true" preserveRatio="true">
+            <SVGImage url="@icons/full.svg" width="16" />
+          </ImageView>
+          <ImageView fitWidth="16" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@icons/window.svg" width="16" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+      </Button>
+    </ToolBar>
+    <VBox alignment="CENTER" AnchorPane.leftAnchor="90" AnchorPane.rightAnchor="90" AnchorPane.topAnchor="8">
+        <Label fx:id="title" />
+    </VBox>
+  </AnchorPane>
+  
+  <!-- ウィンドウ変形イベント処理用 -->
+  <AnchorPane AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" prefHeight="3"
+  onMouseMoved="#mouseMoved" onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" onMouseExited="#mouseExited">
+  </AnchorPane>
+  <AnchorPane AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" prefWidth="3"
+  onMouseMoved="#mouseMoved" onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" onMouseExited="#mouseExited">
+  </AnchorPane>
+  <AnchorPane AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" prefWidth="3"
+  onMouseMoved="#mouseMoved" onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" onMouseExited="#mouseExited">
+  </AnchorPane>
+  
+</AnchorPane>

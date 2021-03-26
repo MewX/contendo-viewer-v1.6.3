@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.stage.Screen?>
+<?import net.zamasoft.reader.util.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.shelf.BookInfoController"
+            styleClass="bookinfo">
+  <stylesheets>
+    <URL value="@../main.css" />
+    <URL value="@bookinfo.css" />
+  </stylesheets>
+
+  <!-- タイトルバー -->
+  <AnchorPane>
+    <Button onAction="#closeAction" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="6" styleClass="close-button">
+      <graphic>
+        <ImageView fitWidth="16" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/close.svg" width="16" />
+        </ImageView>
+      </graphic>
+    </Button>
+  </AnchorPane>
+  
+  <ScrollPane fitToWidth="true">
+    <content>
+      <VBox alignment="TOP_CENTER">
+        <Canvas fx:id="cover" />
+        <Label fx:id="title"/>
+    
+        <VBox fx:id="types">
+        </VBox>
+      </VBox>
+    </content>
+  </ScrollPane>
+  
+</VBox>

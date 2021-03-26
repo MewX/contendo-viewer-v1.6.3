@@ -1,0 +1,57 @@
+Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX :
+Java Runtime Environment
+http://www.oracle.com/technetwork/java/javase/terms/license/index.html
+
+
+Apache Apache License Version 2.0 (LICENSE.asl2.txt) :
+Apache MIME4J
+http://james.apache.org/mime4j/
+
+Apache Batik
+http://xmlgraphics.apache.org/
+
+Apache XML Graphics Commons
+http://xmlgraphics.apache.org/commons/
+
+Apache Commons
+http://commons.apache.org/
+
+Apache HTTP Components
+http://hc.apache.org/
+
+Apache Xerces
+http://xerces.apache.org/
+
+Apache Xalan
+http://xml.apache.org/xalan-j/
+
+Apache PDFBox
+https://pdfbox.apache.org/
+
+
+JNA
+https://github.com/twall/jna
+
+
+NekoHTML
+http://nekohtml.sourceforge.net/
+
+
+JEuclid. Apache-Style Software License (LICENSE.jquclid.txt) :
+JEuclid
+http://jeuclid.sourceforge.net/
+
+
+W3C IPR SOFTWARE NOTICE (LICENSE.sac.html) :
+W3C SAC
+http://www.w3.org/Style/CSS/SAC/
+
+
+Affero GNU General Public License
+MuPDF
+http://www.mupdf.com/
+
+
+NanoHttpd (LICENSE.nanohttpd.md)
+http://nanohttpd.com/
+

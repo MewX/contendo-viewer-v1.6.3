@@ -1,0 +1,11 @@
+package org.w3c.css.sac;
+
+public interface NegativeSelector extends SimpleSelector {
+  SimpleSelector getSimpleSelector();
+}
+
+
+/* Location:              /mnt/r/ConTenDoViewer.jar!/org/w3c/css/sac/NegativeSelector.class
+ * Java compiler version: 1 (45.3)
+ * JD-Core Version:       1.1.3
+ */

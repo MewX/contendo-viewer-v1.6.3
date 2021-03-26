@@ -1,0 +1,1401 @@
+<?xml version="1.0"?>
+<tags>
+	<tagset name="all">
+		A,
+		ABBR,
+		ACRONYM,
+		ADDRESS,
+		APPLET,
+		AREA,
+		B,
+		BASE,
+		BASEFONT,
+		BDO,
+		BGSOUND,
+		BIG,
+		BLINK,
+		BLOCKQUOTE,
+		BODY,
+		BR,
+		BUTTON,
+		CAPTION,
+		CENTER,
+		CITE,
+		CODE,
+		COL,
+		COLGROUP,
+		COMMENT,
+		DEL,
+		DFN,
+		DIR,
+		DIV,
+		DD,
+		DL,
+		DT,
+		EM,
+		EMBED,
+		FIELDSET,
+		FONT,
+		FORM,
+		FRAME,
+		FRAMESET,
+		H1,
+		H2,
+		H3,
+		H4,
+		H5,
+		H6,
+		HEAD,
+		HR,
+		HTML,
+		I,
+		IFRAME,
+		ILAYER,
+		IMG,
+		INPUT,
+		INS,
+		ISINDEX,
+		KBD,
+		KEYGEN,
+		LABEL,
+		LAYER,
+		LEGEND,
+		LI,
+		LINK,
+		LISTING,
+		MAP,
+		MARQUEE,
+		MENU,
+		META,
+		MULTICOL,
+		NEXTID,
+		NOBR,
+		NOEMBED,
+		NOFRAMES,
+		NOLAYER,
+		NOSCRIPT,
+		OBJECT,
+		OL,
+		OPTION,
+		OPTGROUP,
+		P,
+		PARAM,
+		PLAINTEXT,
+		PRE,
+		Q,
+		RB,
+		RBC,
+		RP,
+		RT,
+		RTC,
+		RUBY,
+		S,
+		SAMP,
+		SCRIPT,
+		SELECT,
+		SMALL,
+		SOUND,
+		SPACER,
+		SPAN,
+		STRIKE,
+		STRONG,
+		STYLE,
+		SUB,
+		SUP,
+		TABLE,
+		TBODY,
+		TD,
+		TEXTAREA,
+		TFOOT,
+		TH,
+		THEAD,
+		TITLE,
+		TR,
+		TT,
+		U,
+		UL,
+		VAR,
+		WBR,
+		XML,
+		XMP,
+		UNKNOWN
+	</tagset>
+	<tagset name="dl">
+		DD,DT
+	</tagset>
+	<tagset name="h">
+		H1,H2,H3,H4,H5,H6
+	</tagset>
+	<tagset name="rows">
+		TBODY,TFOOT,THEAD
+	</tagset>
+	<tagset name="cell">
+		TD,TH
+	</tagset>
+	<tagset name="block">
+		ADDRESS,BLOCKQUOTE,CAPTION,CENTER,DIR,DIV,DL,FIELDSET,FORM,
+		$h,HR,ISINDEX,LISTING,MENU,MULTICOL,OL,P,PARAM,PRE,TABLE,UL
+	</tagset>
+	<tagset name="inline">
+		ABBR,ACRONYM,CITE,CODE,DFN,KBD,LABEL,SAMP,VAR
+	</tagset>
+	<tagset name="ignore">
+		AREA,CAPTION,COL,COLGROUP,FRAME,FRAMESET,HEAD,LEGEND,OPTGROUP,OPTION,TBODY,TD,TFOOT,TH,THEAD,TR
+	</tagset>
+	<tagset name="ruby">
+		RB,RT,RP
+	</tagset>
+
+	<tag name="A">
+		<openCloses>A</openCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<closeCloses>
+			$inline
+		</closeCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="ABBR">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="ACRONYM">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="ADDRESS">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="APPLET">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			ADDRESS,B,BIG,BLINK,BLOCKQUOTE,CENTER,DD,DEL,DIV,DL,DT,FIELDSET,FONT,H1,H2,H3,H4,H5,H6,I,INS
+		</discardsClose>
+	</tag>
+
+	<tag name="AREA" flags="EMPTY">
+		<digsFor>
+			MAP
+		</digsFor>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="B">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="BASE" flags="EMPTY|HEAD">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="BASEFONT" flags="EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="BDO">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="BGSOUND" flags="EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="BIG">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="BLINK">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="BLOCKQUOTE">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="BODY" flags="BODY">
+		<closeCloses>
+			$all
+		</closeCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="BR" flags="EMPTY|END_TO_EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="BUTTON">
+		<discardsOpen>
+			$ignore,INPUT,LABEL,SELECT,TEXTAREA
+		</discardsOpen>
+		<discardsClose>
+			ABBR,ACRONYM,BDO,CITE,CODE,DD,DFN,DT,EM,KBD,MAP,MARQUEE,INPUT,LABEL,SELECT,TEXTAREA,INPUT,LABEL,SELECT,TEXTAREA
+		</discardsClose>
+	</tag>
+
+	<tag name="CAPTION">
+		<digsFor>
+			TABLE
+		</digsFor>
+		<openCloses>
+			$rows
+		</openCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="CENTER">
+		<openCloses>
+			$inline,ADDRESS
+		</openCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="CITE">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="CODE">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="COL" flags="EMPTY">
+		<digsFor>
+			TABLE,COLGROUP,TR,$cell
+		</digsFor>
+		<openCloses>
+			$rows
+		</openCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="COLGROUP" flags="CLOSE_BY_TEXT">
+		<digsFor>
+			TABLE,COLGROUP,TR,$cell
+		</digsFor>
+		<openCloses>
+			$rows
+		</openCloses>
+		<discardsOpen>
+			$ignore,-COL,-COLGROUP
+		</discardsOpen>
+	</tag>
+
+	<tag name="COMMENT">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="DEL">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			ABBR,ACRONYM,CITE,CODE,DD,DFN,DT,EM,KBD,SAMP,STRONG,VAR
+		</discardsClose>
+	</tag>
+
+	<tag name="DFN">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="DIR">
+		<openCloses>
+			$inline,ADDRESS,OL,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,LI,OL,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="DIV">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="DD">
+		<alternates>DT</alternates>
+		<openCloses>
+			$dl,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell,OL,UL,DL,LISTING
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			ABBR,ACRONYM,CITE,CODE,DFN,EM,KBD,SAMP,STRONG,VAR
+		</discardsClose>
+	</tag>
+
+	<tag name="DL">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<closeCloses>
+			LI,DT,DD
+		</closeCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="DT">
+		<alternates>DD</alternates>
+		<openCloses>
+			$dl,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell,OL,UL,DL,LISTING
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			ABBR,ACRONYM,CITE,CODE,DFN,EM,KBD,SAMP,STRONG,VAR
+		</discardsClose>
+	</tag>
+
+	<tag name="EM">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="EMBED" flags="EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="FIELDSET">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore,-LEGEND
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="FONT">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="FORM">
+		<openCloses>
+			$inline,ADDRESS
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="FRAME" flags="EMPTY">
+		<digsFor>FRAMESET</digsFor>
+		<insertParents>FRAMESET</insertParents>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="FRAMESET" flags="BODY">
+		<discardsOpen>
+			$ignore,-FRAME
+		</discardsOpen>
+	</tag>
+
+	<tag name="H1">
+		<alternates>
+			$h,-H1
+		</alternates>
+		<openCloses>
+			$inline,$h,ADDRESS,P,DT
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="H2">
+		<alternates>
+			$h,-H2
+		</alternates>
+		<openCloses>
+			$inline,$h,ADDRESS,P,DT
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="H3">
+		<alternates>
+			$h,-H3
+		</alternates>
+		<openCloses>
+			$inline,$h,ADDRESS,P,DT
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="H4">
+		<alternates>
+			$h,-H4
+		</alternates>
+		<openCloses>
+			$inline,$h,ADDRESS,P,DT
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="H5">
+		<alternates>
+			$h,-H5
+		</alternates>
+		<openCloses>
+			$inline,$h,ADDRESS,P,DT
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="H6">
+		<alternates>
+			$h,-H6
+		</alternates>
+		<openCloses>
+			$inline,$h,ADDRESS,P,DT
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="HEAD">
+		<digsFor>HTML</digsFor>
+		<discardsOpen>
+			$ignore,-HTML
+		</discardsOpen>
+	</tag>
+
+	<tag name="HR" flags="EMPTY">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="HTML">
+		<closeCloses>
+			A,B,BDO,BIG,BLINK,DEL,EM,FONT,I,INS,Q,S,SMALL,STRIKE,STRONG,SUB,SUP,TT,U
+		</closeCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="I">
+		<discardsClose>$dl</discardsClose>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+	</tag>
+
+	<tag name="IFRAME">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="IMG" flags="EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="INPUT" flags="EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="INS">
+		<discardsClose>
+			ABBR,ACRONYM,CITE,CODE,DD,DFN,DT,EM,KBD,SAMP,STRONG,VAR
+		</discardsClose>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="ISINDEX" flags="EMPTY">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="KBD">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="KEYGEN">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="LABEL">
+		<openCloses>LABEL</openCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			ABBR,ACRONYM,BDO,CITE,CODE,DD,DFN,DT,EM,KBD,MAP,MARQUEE
+		</discardsClose>
+	</tag>
+
+	<tag name="LAYER">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="LEGEND">
+		<digsFor>
+			FIELDSET
+		</digsFor>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="LI">
+		<openSplits>
+			A,BDO,BIG,B,EM,I,Q,S,SMALL,STRIKE,STRONG,SUB,SUP,TT,U
+		</openSplits>
+		<openCloses>
+			LI,ABBR,ACRONYM,ADDRESS,CITE,CODE,DFN,KBD,P,SAMP,VAR
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell,OL,UL,DL,LISTING
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="LINK" flags="EMPTY|HEAD">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="LISTING">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<closeCloses>
+			LI,DT,DD
+		</closeCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="MAP">
+		<openCloses>MAP</openCloses>
+		<discardsOpen>
+			$ignore,-AREA
+		</discardsOpen>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="MARQUEE">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="MENU">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,LI,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="META" flags="EMPTY|HEAD">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="MULTICOL">
+		<openCloses>
+			$inline,MULTICOL,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="NEXTID">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="NOBR">
+		<openCloses>NOBR</openCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="NOEMBED">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="NOFRAMES">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="NOLAYER">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="NOSCRIPT">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="OBJECT" flags="HEAD">
+		<discardsClose>$dl</discardsClose>
+		<closeCloses>
+			A,B,BDO,BIG,BLINK,DEL,EM,FONT,I,INS,Q,S,SMALL,STRIKE,STRONG,SUB,SUP,TT,U
+		</closeCloses>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="OL">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<closeCloses>
+			LI,DT,DD
+		</closeCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,LI,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="OPTGROUP">
+		<digsFor>
+			OPTION,SELECT
+		</digsFor>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="OPTION">
+		<openCloses>
+			OPTION
+		</openCloses>
+		<digsFor>
+			OPTION,SELECT
+		</digsFor>
+		<discardsOpen>
+			$ignore,-OPTGROUP,-OPTION
+		</discardsOpen>
+	</tag>
+
+	<tag name="P" flags="END_TO_EMPTY">
+		<openCloses>
+			$inline,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,LI,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="PARAM" flags="EMPTY">
+		<openSplits>
+			BDO,BIG,BLINK,B,DEL,EM,FONT,INS,I
+		</openSplits>
+		<openCloses>
+			ADDRESS,BLOCKQUOTE,BUTTON,CENTER,DD,DIR,DIV,DL,DT,FIELDSET,$h,MAP,UNKNOWN
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,APPLET,OBJECT,EMBED,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="PLAINTEXT">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="PRE">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="Q">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="RB">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<openCloses>
+			$ruby
+		</openCloses>
+	</tag>
+
+	<tag name="RBC">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<openCloses>
+			$ruby
+		</openCloses>
+	</tag>
+
+	<tag name="RP">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<openCloses>
+			$ruby
+		</openCloses>
+	</tag>
+
+	<tag name="RT">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<openCloses>
+			$ruby
+		</openCloses>
+	</tag>
+
+	<tag name="RTC">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<openCloses>
+			$ruby
+		</openCloses>
+	</tag>
+
+	<tag name="RUBY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<closeCloses>
+			$ruby
+		</closeCloses>
+	</tag>
+
+	<tag name="S">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="SAMP">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="SCRIPT" flags="HEAD">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="SELECT" flags="IGNORE_TEXT">
+		<openCloses>SELECT</openCloses>
+		<discardsOpen>
+			$ignore,BR,-OPTGROUP,-OPTION
+		</discardsOpen>
+		<discardsClose>BR</discardsClose>
+	</tag>
+
+	<tag name="SMALL">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="SOUND">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="SPACER" flags="EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="SPAN">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="STRIKE">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="STRONG">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="STYLE" flags="HEAD">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="SUB">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="SUP">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="TABLE">
+		<openCloses>
+			$inline,ADDRESS,TABLE,P
+		</openCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<closeCloses>
+			A,B,BDO,BIG,BLINK,DEL,EM,FONT,I,INS,Q,S,SMALL,STRIKE,STRONG,SUB,SUP,TT,U,
+			$rows,TR,$cell
+		</closeCloses>
+		<discardsOpen>
+			$ignore,-CAPTION,-COL,-COLGROUP,-TBODY,-THEAD,-TFOOT,-TD,-TH,-TR
+		</discardsOpen>
+		<discardsClose>
+			ADDRESS,BLINK,BLOCKQUOTE,CENTER,DD,DEL,DIR,DIV,DL,DT,FIELDSET,FONT,$h,INS,LI,LISTING,MAP,MARQUEE,MENU,MULTICOL,NOBR,OBJECT,OL,PRE,P,SPAN,UL,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="TBODY">
+		<digsFor>
+			TABLE
+		</digsFor>
+		<insertParents>
+			TABLE
+		</insertParents>
+		<closeCloses>
+			TR
+		</closeCloses>
+		<discardsOpen>
+			$ignore,-TD,-TH,-TR
+		</discardsOpen>
+	</tag>
+
+	<tag name="TD">
+		<alternate>TH</alternate>
+		<digsFor>
+			TABLE,$rows,TR,$cell
+		</digsFor>
+		<insertParents>
+			TR,THEAD,TFOOT
+		</insertParents>
+		<openCloses>
+			$cell
+		</openCloses>
+		<closeCloses>
+			$all
+		</closeCloses>
+		<stopCloseBy>
+			TR
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore,-COL,-COLGROUP,-TD,-TH,-TR
+		</discardsOpen>
+	</tag>
+
+	<tag name="TEXTAREA">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="TFOOT">
+		<digsFor>
+			TABLE
+		</digsFor>
+		<insertParents>TABLE</insertParents>
+		<closeCloses>
+			TR
+		</closeCloses>
+		<discardsOpen>
+			$ignore,-TD,-TH,-TR
+		</discardsOpen>
+	</tag>
+
+	<tag name="TH">
+		<alternate>TD</alternate>
+		<digsFor>
+			TABLE,$rows,TR,$cell
+		</digsFor>
+		<insertParents>
+			TR,THEAD,TFOOT
+		</insertParents>
+		<openCloses>
+			$cell
+		</openCloses>
+		<closeCloses>
+			$all
+		</closeCloses>
+		<stopCloseBy>
+			TR
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore,-COL,-COLGROUP,-TD,-TH,-TR
+		</discardsOpen>
+	</tag>
+
+	<tag name="THEAD">
+		<digsFor>
+			TABLE
+		</digsFor>
+		<insertParents>TABLE</insertParents>
+		<closeCloses>
+			TR
+		</closeCloses>
+		<discardsOpen>
+			$ignore,-TD,-TH,-TR
+		</discardsOpen>
+	</tag>
+
+	<tag name="TITLE" flags="HEAD">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="TR">
+		<digsFor>
+			TABLE,$rows,TR,$cell
+		</digsFor>
+		<insertParents>
+			$rows
+		</insertParents>
+		<openCloses>
+			TR
+		</openCloses>
+		<stopCloseBy>
+			TABLE,$rows
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore,-COL,-COLGROUP,-TD,-TH,-TR
+		</discardsOpen>
+		<discardsClose>
+			$all,-TABLE,-THEAD,-TFOOT,-TBODY,-TR
+		</discardsClose>
+	</tag>
+
+	<tag name="TT">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="U">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="UL">
+		<openCloses>
+			$inline,ADDRESS,P
+		</openCloses>
+		<closeCloses>
+			LI,DT,DD
+		</closeCloses>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,MAP,MARQUEE,SPAN,LI,UNKNOWN
+		</discardsClose>
+	</tag>
+
+	<tag name="VAR">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<stopCloseBy>
+			CAPTION,$cell
+		</stopCloseBy>
+		<discardsClose>$dl</discardsClose>
+	</tag>
+
+	<tag name="WBR" flags="EMPTY">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="XML">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="XMP">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+	</tag>
+
+	<tag name="UNKNOWN">
+		<discardsOpen>
+			$ignore
+		</discardsOpen>
+		<discardsClose>
+			$dl,UNKNOWN
+		</discardsClose>
+	</tag>
+</tags>

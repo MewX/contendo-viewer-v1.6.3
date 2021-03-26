@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:id="root" fx:controller="net.zamasoft.reader.shelf.UserBoardController"
+            AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
+            AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+            styleClass="board"
+            onDragOver="#dragOver"
+            onDragDropped="#dragDropped">
+   <fx:include fx:id="books" source="books.fxml"/>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.util.AlertController"
+            styleClass="alert">
+  <stylesheets>
+    <URL value="@../main.css" />
+    <URL value="@alert.css" />
+  </stylesheets>
+  
+  <Label fx:id="titleText" />
+  <Label fx:id="messageText" wrapText="true"  />
+   
+  <FlowPane alignment="CENTER">
+    <Button fx:id="yesButton" onAction="#yesAction" text="%yes" />
+    <Button fx:id="noButton" onAction="#noAction" text="%no" />
+  </FlowPane>
+</VBox>

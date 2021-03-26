@@ -1,0 +1,64 @@
+.bookinfo {
+	-fx-padding: 10px;
+}
+
+FlowPane {
+	-fx-padding: 2em 0 0 0;
+	-fx-hgap: 10px;
+}
+
+.bookinfo .close-button {
+	-fx-padding: 3px 6px;
+}
+
+.bookinfo .progress-bar {
+	-fx-min-width: 300px;
+	-fx-padding: 10px;
+	-fx-background-color: transparent;
+}
+
+.bookinfo .label {
+	-fx-text-alignment: center;
+}
+.bookinfo #title {
+	-fx-padding: 15px 0 0 0;
+}
+
+.bookinfo #info {
+	-fx-padding: 15px 0 0 0;
+}
+.bookinfo #info .label {
+	-fx-text-alignment: right;
+}
+
+.bookinfo StackPane .button {
+	-fx-padding: 10px 0;
+	-fx-min-width: 240px;
+}
+
+.bookinfo #readButton {
+	-fx-background-color: yellowgreen;
+}
+.bookinfo #downloadButton {
+	-fx-background-color: deepskyblue;
+}
+.bookinfo #cancelButton {
+	-fx-background-color: LightGray;
+	-fx-text-fill: Black;
+}
+.bookinfo #message,
+.bookinfo #deleteButton,
+.bookinfo #redownloadButton {
+	-fx-text-fill: Red;
+	-fx-background-color: transparent;
+}
+.bookinfo #redownloadButton {
+	-fx-text-fill: deepskyblue;
+}
+.bookinfo #message {
+	-fx-text-alignment: center;
+}
+
+.bookinfo .tool-icon {
+	-fx-padding: 15px 0 0 0;	
+}

@@ -1,0 +1,156 @@
+/* タブ */
+.shelf .tab-pane {
+	-fx-tab-min-width: 200;
+}
+.shelf .tab-pane .tab-header-background {
+	-fx-background-color: White;
+	-fx-border-width: 0 0 1px 0;
+	-fx-border-color: Gray;
+}
+.shelf .tab-pane .tab-label {
+	-fx-font-size: 14px; -fx-font-weight: normal;
+}
+.shelf .tab-pane .tab {
+	-fx-background-color: LightGray;
+	-fx-border-color: Gray;
+	-fx-border-radius: 3 3 0 0;
+	-fx-padding: 6px 0 4px 0;
+	-fx-focus-color: none;
+	-fx-border-insets: 0 1px 0 1px;
+	-fx-background-insets: 0 1px 0 1px;
+}
+.shelf .tab-pane .tab:selected {
+	-fx-background-color: White;
+	-fx-border-color: Gray Gray White Gray;
+}
+
+/* ツールバー */
+.shelf .tool-bar .button {
+	-fx-text-fill: Black;
+	-fx-alignment: top-left;
+	-fx-padding: 8px 10px;
+}
+.shelf .tool-bar .button:hover,
+.shelf .tool-bar .button:focused {
+	-fx-background-color: LightGray;
+	-fx-background-insets: 3px;
+}
+.shelf #logoutButton {
+	-fx-padding: 5px 10px 5px 54px;
+}
+.shelf #guideButton {
+	-fx-padding: 5px 10px 5px 54px;
+}
+.shelf #configButton {
+	-fx-padding: 5px 10px 20px 54px;
+	-fx-background-insets: 3px 3px 18px 3px;
+}
+.shelf .tool-bar {
+	-fx-border-width: 1px;
+	-fx-border-color: #BFBFBF;
+	-fx-background-color: #F2F2F2;
+	-fx-padding: 0;
+}
+.shelf .separator *.line {
+	-fx-border-color: #BFBFBF;
+	-fx-border-Width: 1px 0 0 0;
+}
+
+/* コンボボックス */
+.shelf .combo-box-base {
+    -fx-padding: 2px;
+    -fx-font-size: 16px; -fx-font-weight: normal;
+}
+.combo-box-base  {
+    -fx-background-color: transparent, LightGray, transparent, White;
+}
+.combo-box-base:hover,
+.combo-box-base:focused,
+.combo-box-base:showing {
+    -fx-background-color: transparent, Gray, transparent, White;
+}
+.combo-box-popup .list-view .list-cell:hover,
+.combo-box-popup .list-view .list-cell:focused {
+    -fx-background-color: transparent, Gray;
+}
+
+.shelf .scroll-pane {
+	-fx-hbar-policy: never;
+	-fx-vbar-policy: as-needed;
+	-fx-fit-to-width: true;
+}
+.shelf .scroll-bar:vertical .thumb {
+	-fx-background-color: Black; 
+}
+
+.shelf .title {
+	-fx-font-size: 24px; -fx-font-weight: normal;
+}
+.shelf .author,
+.shelf .publisher {
+	-fx-font-size: 20px; -fx-font-weight: normal;
+}
+.shelf .title,
+.shelf .auther,
+.shelf .detail,
+.shelf .publisher {
+    -fx-wrap-text: true;
+}
+
+.shelf .bookInfo {
+	-fx-border-width: 0;
+	-fx-background-color: rgba(255,255,255,0.8);
+}
+
+.board .text-field#queryText {
+	-fx-background-color: White;
+	-fx-text-fill: Black;
+	-fx-font-size: 14px; -fx-font-weight: normal;
+	-fx-min-width: 20em;
+}
+.board HBox.search {
+	-fx-spacing: 3px;
+	-fx-padding: 10px;
+}
+.board HBox.search #searchButton {
+	-fx-padding: 6px 15px;
+	-fx-min-height: 37px;
+}
+.board #noBooks {
+	-fx-padding: 0 10px;
+}
+.board Label.web {
+	-fx-spacing: 3px;
+	-fx-font-size: 24px; -fx-font-weight: normal;
+	-fx-text-fill: White;
+}
+.board .button {
+	-fx-font-size: 14px; -fx-font-weight: normal;
+}
+.board #closeButton {
+	-fx-padding: 12px;
+	-fx-background-insets: 10px;
+}
+
+/* 書籍一覧 */
+.board .books {
+	-fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.board .books #box {
+	-fx-padding: 0 10px 28px 10px;
+}
+
+.shelf,
+.shelf .board .title,
+.shelf .board .books > * {
+	-fx-background-color: White;
+}
+
+.shelf .board .button {
+	-fx-background-color: LightGray;
+	-fx-text-fill: Black;
+}
+.shelf .board .text-field {
+	-fx-border-color: Gray;
+}

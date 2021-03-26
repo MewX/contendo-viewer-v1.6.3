@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.book.SidePaneController"
+          fx:id="root"
+          AnchorPane.leftAnchor="10" AnchorPane.topAnchor="48"
+          prefWidth="330"
+          prefHeight="420"
+          styleClass="sidepane">
+  <!-- 目次 -->
+  <Tab closable="false">
+    <tooltip>
+      <Tooltip text="%toc"/>
+    </tooltip>
+    <graphic>
+      <ImageView fitWidth="32" pickOnBounds="true" preserveRatio="true">
+        <SVGImage url="@../icons/toc.svg" width="32" />
+      </ImageView>
+    </graphic>
+    <TreeView fx:id="outline" onMouseClicked="#outlineMouseClicked"/>
+  </Tab>
+  
+  <!-- マーカー -->
+  <Tab closable="false" fx:id="markerTab">
+    <tooltip>
+      <Tooltip text="%marker"/>
+    </tooltip>
+    <graphic>
+      <ImageView fitWidth="32" pickOnBounds="true" preserveRatio="true">
+        <SVGImage url="@../icons/marker-tab.svg" width="32" />
+      </ImageView>
+    </graphic>
+    <ListView fx:id="markers" onMouseClicked="#markersMouseClicked"/>
+  </Tab>
+  
+  <!-- しおり -->
+  <Tab closable="false">
+    <tooltip>
+      <Tooltip text="%bookmark"/>
+    </tooltip>
+    <graphic>
+      <ImageView fitWidth="32" pickOnBounds="true" preserveRatio="true">
+        <SVGImage url="@../icons/bookmark-tab.svg" width="32" />
+      </ImageView>
+    </graphic>
+    <ListView fx:id="bookmarks" onMouseClicked="#bookmarksMouseClicked"/>
+  </Tab>
+  
+  <!-- 本の設定 -->
+  <Tab closable="false">
+    <tooltip>
+      <Tooltip text="%configuration"/>
+    </tooltip>
+    <graphic>
+      <ImageView fitWidth="32" pickOnBounds="true" preserveRatio="true">
+        <SVGImage url="@../icons/config.svg" width="32" />
+      </ImageView>
+    </graphic>
+    <VBox styleClass="config">
+    <ScrollPane prefHeight="300">
+    <GridPane hgap="5" vgap="5">
+      <Label text="%textSize" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+      <ComboBox fx:id="textSize" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <Double fx:value="0.5" />
+            <Double fx:value="0.7" />
+            <Double fx:value="0.8" />
+            <Double fx:value="0.9" />
+            <Double fx:value="1.0" />
+            <Double fx:value="1.2" />
+            <Double fx:value="1.4" />
+            <Double fx:value="1.6" />
+            <Double fx:value="1.8" />
+            <Double fx:value="2.0" />
+            <Double fx:value="2.5" />
+            <Double fx:value="3.0" />
+        </FXCollections>
+        </items>
+        <value>
+          <Double fx:value="1.0" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%writingMode" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+      <ComboBox fx:id="writingMode" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%default" />
+            <String fx:value="%horizontal" />
+            <String fx:value="%vertical" />
+            <String fx:value="%vertical2" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%default" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%spreadMode" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+      <ComboBox fx:id="spread" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%auto" />
+            <String fx:value="%spread" />
+            <String fx:value="%single" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%spread" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%background" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+      <ComboBox fx:id="background" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%white" />
+            <String fx:value="%ivory" />
+            <String fx:value="%gray" />
+            <String fx:value="%aqua" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%white" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%reverseMode" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+      <ComboBox fx:id="invert" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%none" />
+            <String fx:value="%reverse" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%none" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%lineHeight" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+      <ComboBox fx:id="lineHeight" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%default" />
+            <String fx:value="1.0" />
+            <String fx:value="1.1" />
+            <String fx:value="1.2" />
+            <String fx:value="1.3" />
+            <String fx:value="1.5" />
+            <String fx:value="1.8" />
+            <String fx:value="2.0" />
+        </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%default" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%letterSpacing" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+      <ComboBox fx:id="letterSpacing" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%default" />
+            <String fx:value="1.0" />
+            <String fx:value="1.1" />
+            <String fx:value="1.2" />
+            <String fx:value="1.3" />
+            <String fx:value="1.5" />
+            <String fx:value="1.8" />
+            <String fx:value="2.0" />
+        </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%default" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%fontFamily" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+      <ComboBox fx:id="fontFamily" GridPane.columnIndex="1" GridPane.rowIndex="7">
+        <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%default" />
+            <String fx:value="%serif" />
+            <String fx:value="%sansSerif" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%default" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%ruby" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+      <ComboBox fx:id="ruby" GridPane.columnIndex="1" GridPane.rowIndex="8">
+        <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%show" />
+            <String fx:value="%hide" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%show" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%flip" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+      <ComboBox fx:id="flip" GridPane.columnIndex="1" GridPane.rowIndex="9">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%animation" />
+            <String fx:value="%fast" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%animation" />
+        </value>
+      </ComboBox>
+      
+      <Label text="%webSearch" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+      <ComboBox fx:id="internetSearch" GridPane.columnIndex="1" GridPane.rowIndex="10">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%google" />
+            <String fx:value="%yahoo" />
+         </FXCollections>
+        </items>
+        <value>
+          <String fx:value="%google" />
+        </value>
+      </ComboBox>
+      </GridPane>
+      </ScrollPane>
+    
+      <Button fx:id="applyButton" text="%apply" onAction="#applyConfigAction"/>
+      <Button fx:id="resetButton" text="%reset" onAction="#resetConfigAction"/>
+      <Button fx:id="saveDefaultButton" text="%appConfig" onAction="#saveDefaultAction"/>
+    </VBox>
+  </Tab>
+  
+  <!-- アプリ設定 -->
+  <Tab closable="false">
+    <tooltip>
+      <Tooltip text="%appConfiguration"/>
+    </tooltip>
+    <graphic>
+      <ImageView fitWidth="32" pickOnBounds="true" preserveRatio="true">
+        <SVGImage url="@../icons/app-config.svg" width="32"/>
+      </ImageView>
+    </graphic>
+    <VBox styleClass="config">
+      <GridPane hgap="5" vgap="5">
+        <Label text="%brightness" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Slider fx:id="brightnessSlider" min="0" max="0.5" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <CheckBox fx:id="displayRequiredCheck" text="%displayRequired" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+      
+        <Label fx:id="displayOrientationLabel" text="%displayOrientation" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="displayOrientationCombo" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <items>
+          <FXCollections fx:factory="observableArrayList">
+            <String fx:value="%auto" />
+            <String fx:value="%portrait" />
+            <String fx:value="%landscape" />
+            <String fx:value="%portraitFlip" />
+            <String fx:value="%landscapeFlip" />
+          </FXCollections>
+          </items>
+          <value>
+            <String fx:value="%auto" />
+          </value>
+        </ComboBox>
+      </GridPane>
+    </VBox>
+  </Tab>
+</TabPane>

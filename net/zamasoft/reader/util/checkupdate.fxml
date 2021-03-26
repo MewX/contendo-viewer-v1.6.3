@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.util.CheckUpdateController"
+            styleClass="checkupdate">
+  <stylesheets>
+    <URL value="@../main.css" />
+    <URL value="@checkupdate.css" />
+  </stylesheets>
+  
+  <Label fx:id="titleText" />
+  <Label fx:id="messageText" />
+   
+  <FlowPane alignment="CENTER">
+    <Button fx:id="downloadButton" onAction="#downloadAction" text="%download" />
+    <Button fx:id="cancelButton" onAction="#cancelAction" text="%cancel" />
+  </FlowPane>
+</VBox>

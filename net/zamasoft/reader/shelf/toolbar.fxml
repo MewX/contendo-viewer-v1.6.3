@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<ToolBar xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.shelf.ToolBarController"
+         fx:id="root"
+         orientation="VERTICAL">
+     
+    <Button fx:id="foldButton" onAction="#foldAction">
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true">
+            <SVGImage url="@../icons/fold.svg" width="40" />
+          </ImageView>
+          <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/unfold.svg" width="40" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </Button>
+         
+    <Separator />
+     
+    <!-- 再読込 -->
+    <Button fx:id="reloadButton" text="%reload" onAction="#reloadAction">
+      <tooltip>
+        <Tooltip text="%reload"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/reload.svg" width="40" />
+        </ImageView>
+      </graphic>
+    </Button>
+    
+    <!-- 検索 -->
+    <Button fx:id="searchButton" text="%shelfSearch" onAction="#searchAction">
+      <tooltip>
+        <Tooltip text="%shelfSearch"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/shelf-search.svg" width="40" />
+        </ImageView>
+      </graphic>
+    </Button>
+    
+    <!-- 並び替え -->
+    <StackPane alignment="CENTER_LEFT">
+    <Button fx:id="sortButton" text="%sort" onAction="#sortAction">
+      <tooltip>
+        <Tooltip text="%sort"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/sort.svg" width="40" />
+        </ImageView>
+      </graphic>
+    </Button>
+    <ComboBox fx:id="sortCombo" AnchorPane.topAnchor="8" AnchorPane.rightAnchor="10" visible="false">
+    </ComboBox>
+    </StackPane>
+    
+     <!-- 追加 -->
+    <Button fx:id="addButton" text="%add" onAction="#addAction">
+      <tooltip>
+        <Tooltip text="%add"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/shelf-add.svg" width="40" />
+        </ImageView>
+      </graphic>
+    </Button>
+    
+    <!-- フルスクリーン -->
+    <Button fx:id="fullScreenButton" text="%fullScreen" onAction="#fullScreenAction">
+      <tooltip>
+        <Tooltip text="%fullScreen"/>
+      </tooltip>
+      <graphic>
+        <StackPane>
+          <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true">
+            <SVGImage url="@../icons/full-screen.svg" width="40" />
+          </ImageView>
+          <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true" visible="false">
+            <SVGImage url="@../icons/full-screen-off.svg" width="40" />
+          </ImageView>
+        </StackPane>
+      </graphic>
+    </Button>
+    
+ 	<Button fx:id="logoutButton"
+		    text="%logout"
+		    onAction="#logoutAction">
+      <tooltip>
+        <Tooltip text="%logout"/>
+      </tooltip>
+	</Button>
+
+    <!-- 操作ガイド -->
+    <Button fx:id="guideButton"
+		    text="%viewerGuide"
+		    onAction="#openGuideAction">
+      <tooltip>
+        <Tooltip text="%viewerGuide"/>
+      </tooltip>
+	</Button>
+
+    <!-- プロキシ設定 -->
+    <Button fx:id="configButton"
+		    text="%proxyConfig"
+		    onAction="#configAction">
+      <tooltip>
+        <Tooltip text="%proxyConfig"/>
+      </tooltip>
+	</Button>
+
+    <Separator />
+   
+    <!-- ショップ -->
+    <Button fx:id="shopButton" text="%openShop" onAction="#openShopAction">
+      <tooltip>
+        <Tooltip text="%openShop"/>
+      </tooltip>
+      <graphic>
+        <ImageView fitWidth="40" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/shop.svg" width="40" />
+        </ImageView>
+      </graphic>
+    </Button>
+  </ToolBar>

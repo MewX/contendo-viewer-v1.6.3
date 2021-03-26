@@ -1,0 +1,46 @@
+.login {
+	-fx-padding: 30px;
+}
+.login .label,
+.login .check-box{
+	-fx-text-fill: Black;
+	-fx-padding: 5px 0 5px 0;
+}
+
+.login .button {
+	-fx-text-fill: Black;
+	-fx-padding: 20px 0 10px 0;
+	-fx-min-width: 286px;
+	-fx-background-color: LightGray;
+	-fx-background-insets: 10px 0 0 0;
+}
+
+.login FlowPane {
+	-fx-hgap: 10px;
+	-fx-background-color: White;
+}
+
+.login VBox.box {
+	-fx-max-width: 300px;
+}
+.login VBox.check {
+	-fx-padding: 10px 0 0 0;
+}
+
+.login .check-box {
+	-fx-font-size: 16px; -fx-font-weight: normal;
+}
+.login .text-field {
+	-fx-font-size: 16px; -fx-font-weight: normal;
+}
+.login .forgotPassword .label {
+	-fx-cursor: hand;
+	-fx-text-fill: deepskyblue;
+}
+
+.login .check-box .box {
+	-fx-border-color: Gray;
+}
+.login .check-box:focused .box {
+    -fx-border-color: black, Gray;
+}

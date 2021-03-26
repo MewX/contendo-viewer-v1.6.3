@@ -1,0 +1,17 @@
+.logout {
+	-fx-padding: 10px;
+}
+.label {
+	-fx-text-fill: White;
+}
+FlowPane {
+	-fx-padding: 20px 0 0 0;
+	-fx-hgap: 10px;
+}
+
+.button {
+	-fx-background-color: rgb(128,179,169);
+}
+.logout {
+	-fx-background-color: rgb(0,104,84);
+}

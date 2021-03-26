@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.shelf.LoginController"
+            styleClass="login">
+  <stylesheets>
+    <URL value="@login.css" />
+  </stylesheets>
+  
+  <FlowPane alignment="CENTER">
+  <VBox styleClass="box">
+    <ImageView fitWidth="260" fitHeight="58">
+      <image>
+        <SVGImage url="@../icons/logo.svg" width="260" height="58"/>
+      </image>
+    </ImageView>
+    <Label fx:id="messageLabel" wrapText="true"/>
+    <Label text="%memberId" />
+    <TextField fx:id="memberIdText" />
+    <Label text="%password" />
+    <PasswordField fx:id="passwordText" />
+    <VBox styleClass="check">
+      <CheckBox fx:id="saveId" text="%saveId"/>
+      <CheckBox fx:id="autoLogin" text="%autoLogin"/>
+    </VBox>
+  </VBox>
+  </FlowPane>
+   
+  <FlowPane alignment="CENTER">
+  <Button fx:id="loginButton" onAction="#loginAction" text="%login" disable="true"/>
+  </FlowPane>
+   
+  <FlowPane alignment="CENTER" orientation="VERTICAL" styleClass="forgotPassword">
+    <Label text="%forgotPassword" onMouseClicked="#forgotPasswordClicked"/>
+    <Label text="%register" onMouseClicked="#registerClicked"/>
+  </FlowPane>
+</VBox>

@@ -1,0 +1,27 @@
+.label,
+.check-box {
+	-fx-text-fill: White;
+	-fx-padding: 8px 0 8px 0;
+}
+
+FlowPane {
+	-fx-padding: 20px 0 0 0;
+	-fx-hgap: 10px;
+}
+
+.check-box,
+.text-field {
+	-fx-font-size: 16px; -fx-font-weight: normal;
+}
+
+VBox {
+	-fx-padding: 0 10px 0 10px;
+}
+
+.button {
+	-fx-background-color: rgb(128,179,169);
+}
+.config {
+	-fx-padding: 30px 10px 10px 10px;
+	-fx-background-color: rgb(0,104,84);
+}

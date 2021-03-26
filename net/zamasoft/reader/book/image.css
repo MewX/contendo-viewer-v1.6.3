@@ -1,0 +1,7 @@
+.book .image {
+	-fx-background-color: rgba(0,0,0,0.8);
+}
+
+.book .image .button {
+	-fx-background-color: rgba(0,0,0,0.5);
+}

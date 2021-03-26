@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import java.net.*?>
+<?import net.zamasoft.reader.book.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.book.DecriptorBookController"
+            fx:id="root" styleClass="book" onMouseMoved="#mouseMoved">
+  <stylesheets>
+    <URL value="@book.css" />
+  </stylesheets>
+  
+  <!-- 本の内容表示 -->
+  <Pane fx:id="stackPane"
+        AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="38"
+        onMouseClicked="#mouseClicked" onMousePressed="#mousePressed"/>
+  
+  <!-- 明るさ調整マスク -->
+  <Pane fx:id="maskPane" AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="38"
+        mouseTransparent="true" opacity="0"/>
+        
+  <!-- オーディオ停止ボタン -->
+  <Button fx:id="audioStop" onAction="#audioStopAction" visible="false">
+      <graphic>
+        <ImageView fitWidth="60" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/audio-stop.svg" width="60"/>
+        </ImageView>
+      </graphic>
+  </Button>
+  
+  <!-- スクロールバー -->
+  <MyScrollBar fx:id="scroll"
+             AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.bottomAnchor="10"
+             onMouseReleased="#scrollMouseReleased"
+             onMouseEntered="#scrollMouseEntered"
+             onMouseExited="#scrollMouseExited" />
+             
+  <!-- スクロール先のタイトルラベル -->
+  <HBox alignment="CENTER"
+        AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.bottomAnchor="33"
+        mouseTransparent="true">
+    <Label fx:id="scrollLabel" opacity="0"/>
+  </HBox>
+  
+  <!-- ツール類 -->
+  <fx:include fx:id="toolbar" source="toolbar.fxml"/>
+  <fx:include fx:id="sidepane" source="sidepane.fxml"/>
+  
+  <!-- 無効化マスク -->
+  <Pane fx:id="disablePane" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+        mouseTransparent="true" opacity="0.7" visible="false"/>
+</AnchorPane>

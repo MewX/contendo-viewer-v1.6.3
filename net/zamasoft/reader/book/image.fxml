@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import java.net.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.book.ImageController"
+            fx:id="root" styleClass="image"
+            AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="10"
+            onMouseMoved="#mouseMoved"
+            mouseTransparent="false"
+            >
+  <stylesheets>
+    <URL value="@image.css" />
+  </stylesheets>
+
+  <!-- スクロール領域 -->
+  <ScrollPane fx:id="scrollPane"
+              AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+    <AnchorPane fx:id="anchor"
+                onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" onMouseReleased="#mouseReleased"
+                onZoomStarted="#zoomStarted" onZoom="#zoom">
+      <ImageView fx:id="imageView" preserveRatio="true" />
+    </AnchorPane>
+  </ScrollPane>
+
+  <AnchorPane AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10">
+	  <Button fx:id="zoomOutButton" onAction="#zoomOutAction" AnchorPane.rightAnchor="272"
+	          styleClass="close">
+	    <graphic>
+	      <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+	        <SVGImage url="@../icons/image-zoom-out.svg" width="48" />
+	      </ImageView>
+	    </graphic>
+	  </Button>
+	  <Button fx:id="zoomInButton" onAction="#zoomInAction" AnchorPane.rightAnchor="204"
+	          styleClass="close">
+	    <graphic>
+	      <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+	        <SVGImage url="@../icons/image-zoom-in.svg" width="48" />
+	      </ImageView>
+	    </graphic>
+	  </Button>
+	
+	  <Button onAction="#leftAction" AnchorPane.rightAnchor="136"
+	          styleClass="close">
+	    <graphic>
+	      <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+	        <SVGImage url="@../icons/image-left.svg" width="48" />
+	      </ImageView>
+	    </graphic>
+	  </Button>
+	  <Button onAction="#rightAction" AnchorPane.rightAnchor="68"
+	          styleClass="close">
+	    <graphic>
+	      <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+	        <SVGImage url="@../icons/image-right.svg" width="48" />
+	      </ImageView>
+	    </graphic>
+	  </Button>
+	  
+	  <!-- 閉じるボタン -->
+	  <Button onAction="#closeAction" AnchorPane.rightAnchor="0"
+	          styleClass="close">
+	    <graphic>
+	      <ImageView fitWidth="48" pickOnBounds="true" preserveRatio="true">
+	        <SVGImage url="@../icons/close.svg" width="48" />
+	      </ImageView>
+	    </graphic>
+	  </Button>
+  </AnchorPane>
+</AnchorPane>

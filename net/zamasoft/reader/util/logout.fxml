@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="net.zamasoft.reader.util.LogoutController"
+            styleClass="logout">
+  <stylesheets>
+    <URL value="@../main.css" />
+    <URL value="@logout.css" />
+  </stylesheets>
+  
+  <FlowPane alignment="CENTER" orientation="VERTICAL">
+    <Label text="%logoutMessage" wrapText="true" />
+    <Label text="%memberId" />
+    <Label fx:id="memberIdLabel" />
+  </FlowPane>
+   
+  <FlowPane alignment="CENTER">
+    <Button onAction="#logoutAction" text="%logout"/>
+    <Button onAction="#cancelAction" text="%cancel" />
+  </FlowPane>
+</VBox>

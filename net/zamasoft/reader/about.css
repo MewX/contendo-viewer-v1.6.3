@@ -1,0 +1,8 @@
+/* About */
+.button {
+	-fx-fill: White;
+	-fx-text-fill: Blue;
+	-fx-background-color: transparent;
+	-fx-padding: 3px 12px;
+	-fx-cursor: default;
+}

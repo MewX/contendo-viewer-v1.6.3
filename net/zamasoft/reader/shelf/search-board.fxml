@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import net.zamasoft.reader.util.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:id="root" fx:controller="net.zamasoft.reader.shelf.SearchBoardController"
+            AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
+            AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+            styleClass="board">
+  <top>
+  <AnchorPane AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
+              styleClass="title">
+    <HBox AnchorPane.rightAnchor="3" AnchorPane.leftAnchor="3" AnchorPane.topAnchor="3" AnchorPane.bottomAnchor="3" styleClass="search">
+      <TextField fx:id="queryText"/>
+      <Button fx:id="searchButton" text="%search" onAction="#search"/>
+    </HBox>
+    <Button fx:id="closeButton" AnchorPane.rightAnchor="3" AnchorPane.topAnchor="3" onAction="#close">
+       <graphic>
+        <ImageView fitWidth="24" pickOnBounds="true" preserveRatio="true">
+          <SVGImage url="@../icons/close.svg" width="24" />
+        </ImageView>
+      </graphic>
+    </Button>
+  </AnchorPane>
+  </top>
+  <center>
+    <AnchorPane AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
+                AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+      <fx:include fx:id="books" source="books.fxml"/>
+      <Label fx:id="noBooks" text="%noBooks" AnchorPane.leftAnchor="3" AnchorPane.topAnchor="3"/>
+    </AnchorPane>
+  </center>
+</BorderPane>
